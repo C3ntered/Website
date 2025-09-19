@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- All code here is written by me -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to my website</title>
+  <meta name="description" content="Personal about me website: education, hobbies, skills, and contact.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* All code here was written with the assistance of AI*/
+    :root {
+      --bg: #ffffff;
+      --bg-muted: #f6f7f9;
+      --text: #0f172a;
+      --muted: #475569;
+      --primary: #2563eb;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+    }
+    .dark {
+      --bg: #0b1020;
+      --bg-muted: #0f172a;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --primary: #60a5fa;
+      --card: #0f162e;
+      --border: #1f2a44;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 80% -200px, rgba(37, 99, 235, 0.08), transparent 60%), var(--bg);
+      line-height: 1.6;
+    }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: saturate(1.4) blur(10px);
+      background: color-mix(in srgb, var(--bg) 75%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: 0.2px; }
+    .avatar {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), #9333ea);
+      box-shadow: var(--shadow);
+    }
+    nav ul { list-style: none; display: flex; gap: 18px; padding: 0; margin: 0; }
+    nav a { text-decoration: none; color: var(--muted); font-weight: 500; }
+    nav a:hover { color: var(--text); }
+    .actions { display: flex; align-items: center; gap: 10px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; height: 36px; padding: 0 14px;
+      border: 1px solid var(--border); border-radius: 10px; background: var(--card); color: var(--text);
+      cursor: pointer; font-weight: 600; box-shadow: var(--shadow);
+    }
+    .btn:hover { transform: translateY(-1px); }
+
+    /* Hero */
+    .hero { padding: 64px 0 28px; }
+    .hero-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 28px; align-items: center; }
+    .hero h1 { font-size: 42px; line-height: 1.15; margin: 0 0 16px; }
+    .lead { color: var(--muted); font-size: 18px; margin: 0 0 20px; }
+    .hero-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 20px; box-shadow: var(--shadow); }
+    .hero-photo { width: 100%; aspect-ratio: 1/1; border-radius: 14px; object-fit: cover; border: 1px solid var(--border); }
+    .quick-links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .chip { border: 1px solid var(--border); padding: 8px 12px; border-radius: 999px; background: var(--bg); color: var(--muted); font-weight: 600; }
+
+    /* Sections */
+    section { padding: 28px 0; }
+    .section-title { font-size: 24px; margin: 0 0 16px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px; box-shadow: var(--shadow); }
+    .muted { color: var(--muted); }
+
+    /* Education timeline */
+    .timeline { position: relative; margin-left: 8px; }
+    .timeline::before { content: ""; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+    .edu-item { position: relative; padding-left: 28px; margin: 0 0 18px; }
+    .edu-item::before { content: ""; position: absolute; left: 3px; top: 6px; width: 14px; height: 14px; background: var(--primary); border-radius: 50%; box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 20%, transparent); }
+
+    /* Skills */
+    .skill { display: grid; grid-template-columns: 140px 1fr 60px; align-items: center; gap: 10px; margin: 8px 0; }
+    .bar { height: 10px; background: var(--bg-muted); border: 1px solid var(--border); border-radius: 999px; overflow: hidden; }
+    .bar > span { display: block; height: 100%; background: linear-gradient(90deg, var(--primary), #9333ea); }
+
+    /* Footer */
+    footer { padding: 28px 0 48px; color: var(--muted); border-top: 1px solid var(--border); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .grid { grid-template-columns: 1fr; }
+      .skill { grid-template-columns: 1fr; gap: 6px; }
+      nav ul { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- All code here is written by me -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="avatar" aria-hidden="true"></div>
+        <span>Welcome </span>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#hobbies">Hobbies</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <button id="themeToggle" class="btn" aria-label="Toggle dark mode">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about" class="hero">
+      <div class="hero-grid">
+        <div class="hero-card">
+          <h1>Hi, I’m <span style="color: var(--primary)">Kai</span>.</h1>
+          <p class="lead">I am a student who loves to learn and explore new things. This website is a page to cover who I am and what I love to do. I believe we only live once, so we should make the most of it. I enjoy making an adventure out of every day.</p>
+          <div class="quick-links" aria-label="Quick links">
+            <a class="chip" href="#education">Education</a>
+            <a class="chip" href="#hobbies">Hobbies</a>
+            <a class="chip" href="#skills">Skills</a>
+            <a class="chip" href="#contact">Contact</a>
+          </div>
+        </div>
+          <div class="hero-card">
+            <img src="kai.jpeg" alt="A self portrait of myself" class="hero-photo">
+          </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+      <div class="card">
+        <div class="timeline">
+          <div class="edu-item">
+            <h3 style="margin: 0 0 4px;">Batchelor of Engineering in Mechanical Engineering</h3>
+            <div class="muted">Cornell University • 2025 – 2029</div>
+            <p style="margin: 8px 0 0;" class="muted">I am currently pursing an engineering degree in mechanical engineering. Where I hope to create more sustainable and efficient systems. I am also minoring in philosophy, which I find helps me understand the why of things.</p>
+          </div>
+          <div class="edu-item">
+            <h3 style="margin: 0 0 4px;">Past Experience</h3>
+            <div class="muted">Python, Java, Some HTML/CSS and JavaScript and some C++</div>
+            <p style="margin: 8px 0 0;" class="muted">I have made several projects using these languages, and I am currently learning more about them.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="hobbies">
+      <h2 class="section-title">Hobbies</h2>
+      <div class="grid">
+        <div class="card">
+          <h3 style="margin: 0 0 8px;">Coding Projects</h3>
+          <p class="muted">I love to create tools and applications that help me and others. I also love to be on an adventure.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin: 0 0 8px;">Design & Photography</h3>
+          <p class="muted">I love taking photos of the wild, I try and make things as abstract as possible while keeping the original topic.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin: 0 0 8px;">Outdoors</h3>
+          <p class="muted">I love to run, play soccer and watch nature. Surprising, I find people watching to be super interesting.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="card">
+        <div class="skill">
+          <strong>Python</strong>
+          <div class="bar"><span style="width: 80%"></span></div>
+          <span class="muted">Proficient</span>
+        </div>
+        <div class="skill">
+          <strong>Java</strong>
+          <div class="bar"><span style="width: 70%"></span></div>
+          <span class="muted">Proficient</span>
+        </div>
+        <div class="skill">
+          <strong>HTML/CSS</strong>
+          <div class="bar"><span style="width: 40%"></span></div>
+          <span class="muted">Beginner</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="card">
+        <p class="muted">Want to connect or collaborate? Reach me at:</p>
+        <ul>
+          <li>Email: <a href="mailto:kaih25373@gmail.com">kaih25373@gmail.com</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/kai-holland-4374aa271/" rel="noopener">Kai Holland</a></li>
+          <li>GitHub: <a href="https://github.com/C3ntered" rel="noopener">@c3ntered</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>© <span id="year"></span> Kai. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    // Theme: respect system, persist preference
+    (function initTheme() {
+      try {
+        var saved = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if ((saved === 'dark') || (!saved && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) { /* no-op */ }
+    })();
+
+    document.getElementById('themeToggle').addEventListener('click', function () {
+      var root = document.documentElement;
+      var isDark = root.classList.toggle('dark');
+      try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch (e) {}
+      this.textContent = isDark ? '☀️' : '🌙';
+    });
+
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
+
